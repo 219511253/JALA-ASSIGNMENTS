@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript Concepts Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 30px;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px #ccc;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      font-size: 16px;
+    }
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Task 1 -->
+  <section>
+    <h2>1. Using <code>this</code> to disappear button on click</h2>
+    <button id="disappearBtn" onclick="this.style.display='none'">Click me to disappear</button>
+  </section>
+
+  <!-- Task 2 -->
+  <section>
+    <h2>2. call() vs apply()</h2>
+    <button onclick="demoCallApply()">Show call() and apply() difference</button>
+    <pre id="callApplyOutput" class="output"></pre>
+
+    <script>
+      function greet(greeting, punctuation) {
+        return greeting + ', ' + this.name + punctuation;
+      }
+
+      const person = { name: 'Alice' };
+
+      function demoCallApply() {
+        // call(): arguments passed individually
+        const callResult = greet.call(person, 'Hello', '!');
+
+        // apply(): arguments passed as array
+        const applyResult = greet.apply(person, ['Hi', '...']);
+
+        document.getElementById('callApplyOutput').textContent =
+          `call(): ${callResult}\napply(): ${applyResult}\n\n` +
+          "Difference:\ncall() accepts arguments separately, apply() accepts arguments as an array.";
+      }
+    </script>
+  </section>
+
+  <!-- Task 3 -->
+  <section>
+    <h2>3. Simple Counter with Button</h2>
+    <button onclick="incrementCounter()">Count</button>
+    <div id="counterValue" class="output">0</div>
+
+    <script>
+      let count = 0;
+      function incrementCounter() {
+        count++;
+        document.getElementById('counterValue').textContent = count;
+      }
+    </script>
+  </section>
+
+  <!-- Task 4 -->
+  <section>
+    <h2>4. Counter Using Getter and Setter</h2>
+    <button onclick="counter.value++">Increment Counter</button>
+    <div id="getterSetterOutput" class="output">0</div>
+
+    <script>
+      const counter = {
+        _value: 0,
+        get value() {
+          return this._value;
+        },
+        set value(val) {
+          if (typeof val === 'number' && val >= 0) {
+            this._value = val;
+            document.getElementById('getterSetterOutput').textContent = this._value;
+          }
+        }
+      };
+    </script>
+  </section>
+
+  <!-- Task 5 -->
+  <section>
+    <h2>5. Adding Properties via Prototype</h2>
+    <button onclick="showPrototypeProperties()">Show Prototype Properties</button>
+    <pre id="protoOutput" class="output"></pre>
+
+    <script>
+      function Person(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+      }
+
+      // Adding new property to prototype
+      Person.prototype.fullName = function() {
+        return this.firstName + ' ' + this.lastName;
+      };
+
+      Person.prototype.greet = function() {
+        return 'Hello, ' + this.firstName + '!';
+      };
+
+      function showPrototypeProperties() {
+        const p = new Person('John', 'Doe');
+        const output = [
+          'Full name via prototype method: ' + p.fullName(),
+          'Greeting via prototype method: ' + p.greet()
+        ].join('\n');
+        document.getElementById('protoOutput').textContent = output;
+      }
+    </script>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS & HTML Tasks Demo</title>
+  <style>
+    /* Task 1: Table with border and hover color change */
+    table {
+      border: 2px solid black;
+      width: 80%;
+      margin: 20px auto;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    table:hover {
+      background-color: #f0f8ff;
+    }
+
+    th, td {
+      padding: 10px;
+    }
+
+    /* Task 2: Visibility and Display */
+    .visibility-demo span {
+      margin-right: 10px;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    .collapse {
+      visibility: collapse;
+    }
+
+    .display-none {
+      display: none;
+    }
+
+    .display-inline {
+      display: inline;
+    }
+
+    .display-block {
+      display: block;
+    }
+
+    .display-contents {
+      display: contents;
+    }
+
+    .display-list-item {
+      display: list-item;
+      list-style: square;
+    }
+
+    /* Task 3: Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #bottom, #top {
+      padding: 30px;
+      text-align: center;
+    }
+
+    a.scroll-link {
+      display: block;
+      text-align: center;
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    /* Task 4: Padding vs Margin */
+    .padding-box {
+      background-color: #c8e6c9;
+      padding: 30px;
+      margin: 10px;
+    }
+
+    .margin-box {
+      background-color: #ffecb3;
+      padding: 10px;
+      margin: 30px;
+    }
+
+    /* Task 5: Multiple background images */
+    .multi-bg {
+      height: 300px;
+      background-image: url('https://via.placeholder.com/150x150/ff0000'), url('https://via.placeholder.com/150x150/0000ff');
+      background-position: left top, right bottom;
+      background-repeat: no-repeat;
+      background-size: 100px 100px, 100px 100px;
+      background-color: #f4f4f4;
+      margin: 20px;
+      border: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Task 3: Top Link -->
+  <a href="#bottom" class="scroll-link">Click to go to bottom of page</a>
+
+  <!-- Task 1: Table with hover -->
+  <section>
+    <h2 style="text-align:center">1. Table with Hover Background Change</h2>
+    <table>
+      <tr>
+        <th>Name</th><th>Age</th><th>City</th>
+      </tr>
+      <tr>
+        <td>Alice</td><td>25</td><td>New York</td>
+      </tr>
+      <tr>
+        <td>Bob</td><td>30</td><td>London</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Task 2: Visibility & Display -->
+  <section style="text-align:center">
+    <h2>2. Visibility and Display</h2>
+    <div class="visibility-demo">
+      <span class="visible">Visible</span>
+      <span class="hidden">Hidden</span>
+      <span class="collapse">Collapse</span>
+    </div>
+    <br>
+    <div>
+      <span class="display-none">Display None</span>
+      <span class="display-inline">Display Inline</span>
+      <span class="display-block">Display Block</span>
+      <span class="display-contents">Display Contents</span>
+      <span class="display-list-item">Display List Item</span>
+    </div>
+  </section>
+
+  <!-- Task 4: Padding vs Margin -->
+  <section>
+    <h2 style="text-align:center">4. Padding and Margin</h2>
+    <div class="padding-box">This box has large padding (30px), small margin (10px)</div>
+    <div class="margin-box">This box has small padding (10px), large margin (30px)</div>
+  </section>
+
+  <!-- Task 5: Multiple Backgrounds -->
+  <section>
+    <h2 style="text-align:center">5. Multiple Background Images</h2>
+    <div class="multi-bg"></div>
+  </section>
+
+  <!-- Task 3: Bottom Link -->
+  <div id="bottom">
+    <a href="#top" class="scroll-link">Click to go to top of page</a>
+  </div>
+
+  <!-- Top anchor -->
+  <div id="top"></div>
+
+</body>
+</html>
