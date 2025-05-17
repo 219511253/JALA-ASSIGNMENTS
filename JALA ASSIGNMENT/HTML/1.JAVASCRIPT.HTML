@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Tasks in HTML</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    section {
+      background: #fff;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Task 1: Single-line and Multi-line Comments -->
+  <section>
+    <h2>1. Comments</h2>
+    <pre>
+<code>
+// This is a single-line comment
+
+/*
+  This is a multi-line comment
+  It spans across multiple lines
+*/
+    </code>
+    </pre>
+  </section>
+
+  <!-- Task 2: Array and Button to Sort -->
+  <section>
+    <h2>2. Sort Fruits in Descending Order</h2>
+    <p id="fruitsDisplay"></p>
+    <button onclick="sortFruits()">Sort Fruits Descending</button>
+
+    <script>
+      const fruits = ['Banana', 'Apple', 'Mango', 'Orange', 'Pineapple'];
+      document.getElementById("fruitsDisplay").innerText = "Fruits: " + fruits.join(", ");
+
+      function sortFruits() {
+        fruits.sort().reverse();
+        document.getElementById("fruitsDisplay").innerText = "Sorted: " + fruits.join(", ");
+      }
+    </script>
+  </section>
+
+  <!-- Task 3: For/In Loop -->
+  <section>
+    <h2>3. FOR/IN Loop</h2>
+    <pre id="loopOutput"></pre>
+    <script>
+      const car = {brand: "Toyota", model: "Corolla", year: 2020};
+      let output = "";
+      for (let key in car) {
+        output += key + ": " + car[key] + "\n";
+      }
+      document.getElementById("loopOutput").innerText = output;
+    </script>
+  </section>
+
+  <!-- Task 4: Object and Accessing Properties -->
+  <section>
+    <h2>4. Object Access</h2>
+    <p id="personAccess"></p>
+    <script>
+      const person = {
+        firstname: "John",
+        lastname: "Doe"
+      };
+
+      const access1 = person.firstname;       // Dot notation
+      const access2 = person['lastname'];     // Bracket notation
+
+      document.getElementById("personAccess").innerText =
+        "First Name: " + access1 + " | Last Name: " + access2;
+    </script>
+  </section>
+
+  <!-- Task 5: Variable Hoisting -->
+  <section>
+    <h2>5. Variable Hoisting</h2>
+    <pre id="hoistingOutput"></pre>
+    <script>
+      x = 10; // Initialize before declaration
+      var x;  // Declaration (hoisted to top)
+
+      document.getElementById("hoistingOutput").innerText = "Value of x (hoisted): " + x;
+    </script>
+  </section>
+
+  <!-- Task 6: Strict Mode -->
+  <section>
+    <h2>6. Strict Mode</h2>
+    <pre id="strictOutput"></pre>
+    <script>
+      "use strict";
+
+      try {
+        undeclaredVariable = 5; // Error because not declared with let/var/const
+      } catch (err) {
+        document.getElementById("strictOutput").innerText =
+          "Error in strict mode: " + err.message;
+      }
+    </script>
+  </section>
+
+</body>
+</html>

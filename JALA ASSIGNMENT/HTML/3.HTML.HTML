@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Semantic & Non-Semantic HTML Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    section, article, aside, nav, header, footer, figure, figcaption, hgroup {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+    }
+    mark {
+      background-color: yellow;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 6px 12px;
+      text-align: left;
+    }
+    header, footer {
+      background-color: #ddd;
+      text-align: center;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style-type: none;
+      padding-left: 0;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>1. Non-semantic elements: &lt;div&gt; and &lt;span&gt;</h1>
+  <div style="border: 2px solid #333; padding: 10px; margin-bottom: 20px;">
+    This is a <span style="color: red; font-weight: bold;">non-semantic inline span</span> inside a div block.
+  </div>
+
+  <h1>2. Semantic elements: &lt;form&gt;, &lt;table&gt; and &lt;article&gt;</h1>
+  <article>
+    <h2>Article Title</h2>
+    <p>This article discusses semantic HTML usage.</p>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input id="name" name="name" type="text" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Fruit</th>
+          <th>Color</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Apple</td><td>Red</td></tr>
+        <tr><td>Banana</td><td>Yellow</td></tr>
+        <tr><td>Grapes</td><td>Purple</td></tr>
+      </tbody>
+    </table>
+  </article>
+
+  <h1>3. All HTML5 Semantic Tags</h1>
+  <header>
+    <hgroup>
+      <h1>Page Header Title</h1>
+      <h2>Subtitle goes here</h2>
+    </hgroup>
+    <nav>
+      <ul>
+        <li><a href="#article-section">Article</a></li>
+        <li><a href="#aside-section">Aside</a></li>
+        <li><a href="#footer-section">Footer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="article-section">
+    <article>
+      <h2>HTML5 Semantic Article</h2>
+      <p>This is a paragraph with a <mark>highlighted mark tag</mark> inside.</p>
+      <figure>
+        <img src="https://picsum.photos/id/1005/300/200" alt="Example Figure" />
+        <figcaption>Figure 1: Sample image with figcaption</figcaption>
+      </figure>
+      <time datetime="2025-05-17">Published: May 17, 2025</time>
+    </article>
+  </section>
+
+  <aside id="aside-section">
+    <h3>Aside Section</h3>
+    <p>This content is related but separate from the main article.</p>
+  </aside>
+
+  <footer id="footer-section">
+    <p>&copy; 2025 Your Website. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
